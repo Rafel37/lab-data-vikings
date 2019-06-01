@@ -1,11 +1,12 @@
 # Project lab-data-vikings
-import random
+# import random
 
 
 # Soldier (constructor, ataque y daño)
 class Soldier:
-    pass
-
+    def __init__(self, health, strength):
+        self.health = health
+        self.strength = strength
 # Viking
 class Viking(Soldier):
     pass
