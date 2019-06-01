@@ -18,6 +18,15 @@ class TestWar(unittest.TestCase):
     def testSaxonArmy(self):
         self.assertEqual(self.war.saxon_army, [])
 
+    def testAddSaxon(self):
+        self.assertTrue(callable(self.war.add_saxon))
+
+    def testIsViking_armyAMethod(self):
+        self.assertEqual(callable(self.war.viking_army), False)
+    
+    def testIsSaxon_armyAMethod(self):
+        self.assertEqual(callable(self.war.saxon_army), False)
+
 
 class TestWar2(unittest.TestCase):
 
@@ -41,7 +50,7 @@ class TestWar2(unittest.TestCase):
 
     def testAddViking(self):
         self.assertEqual(callable(self.war.add_viking), True)
-
+    
     def testAddVikingShouldReceiveOneParam(self):
         self.assertEqual(len(signature(self.war.add_viking).parameters), 1)
 
